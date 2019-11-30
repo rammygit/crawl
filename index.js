@@ -2,6 +2,8 @@ const siteUrl = "https://en.wikipedia.org/wiki/Chennai";
 const axios = require("axios");
 const cheerio = require("cheerio");
 
+const PORT = process.env.PORT || 3000;
+
 const fetchData = async () => {
   const result = await axios.get(siteUrl);
   return cheerio.load(result.data);
@@ -60,8 +62,8 @@ app.get('/parse',function(req,res)
 });
 
 
-app.listen(3000,function() {
-    console.log("App Started at Port 3000")
+app.listen(PORT,function() {
+    console.log(`App Started....Listening at ${PORT}`)
 });
 
 // extract();
