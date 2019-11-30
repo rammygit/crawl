@@ -36,9 +36,11 @@ const extract = async (res) => {
 
     });
 
-    console.log(text)
+    // console.log(text)
 
-    res.send(text)
+    
+
+    res.send(text.slice(0, 100))
 
 
 
