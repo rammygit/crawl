@@ -59,7 +59,10 @@ app.get('/parse',function(req,res)
     
 });
 
-const server=app.listen(3000,function() {});
+
+app.listen(3000,function() {
+    console.log("App Started at Port 3000")
+});
 
 // extract();
 
