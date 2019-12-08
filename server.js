@@ -2,7 +2,7 @@ const siteUrl = "https://en.wikipedia.org/wiki/Chennai";
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5500;
 
 const fetchData = async () => {
   const result = await axios.get(siteUrl);
@@ -52,6 +52,10 @@ const extract = async (res) => {
 
 const express=require('express');
 const app=express();
+const cors = require('cors');
+
+app.use(cors())
+
 app.get('/',function(req,res)
 {
     res.send('Hello World!');
